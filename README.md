@@ -6,6 +6,12 @@
 
 ### function* walk(dir, filter=acceptAnyPath, followLinks=false)
 
+## install
+
+```bash
+$ npm install --save walk-dir-sync
+```
+
 ## example
 
 ```bash
@@ -25,7 +31,7 @@ dir2
 ```
 
 ```js
-import walk from './index';
+const walkDirSync = require('walk-dir-sync');
 const path = require('path');
 
 function ignoreHiddenDirs(absPath, stats, lstats) {
@@ -35,7 +41,7 @@ function ignoreHiddenDirs(absPath, stats, lstats) {
   return true;
 }
 
-for (const dir of walk('dir1', ignoreHiddenDirs, true)) {
+for (const dir of walkDirSync('dir1', ignoreHiddenDirs, true)) {
   console.log(JSON.stringify(dir, null, 2));
 }
 
