@@ -9,10 +9,7 @@ function acceptPath(absPath, stats, lstats) {
 
 export default function* walk(dir, filter=acceptPath, followLinks=false) {
   let ret = {
-    path: {
-      rel: dir,
-      abs: path.resolve(dir)
-    },
+    path: dir,
     directories: [],
     files: []
   };
