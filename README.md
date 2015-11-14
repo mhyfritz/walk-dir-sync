@@ -11,25 +11,17 @@ function* walk(dir, filter=acceptPath, followLinks=false)
 ## example
 
 ```bash
-# (shortened output)
-$ ls -RalF dir1 dir2
-dir1:
-.hidden/
-dir1-level1-dir1/
-dir1-level1-file1
-dir1-level1-file2
-dir2 -> ../dir2/
-
-dir1/.hidden:
-hidden-file
-
-dir1/dir1-level1-dir1:
-dir1-level2-file1
-dir1-level2-file2
-dir1-level2-file3
-
-dir2:
-dir2-level1-file1
+tree dir1 dir2
+dir1
+├── dir1-level1-dir1/
+│   ├── dir1-level2-file1
+│   ├── dir1-level2-file2
+│   └── dir1-level2-file3
+├── dir1-level1-file1
+├── dir1-level1-file2
+└── dir2 -> ../dir2/
+dir2
+└── dir2-level1-file1
 ```
 
 ```js
