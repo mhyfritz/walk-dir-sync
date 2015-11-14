@@ -41,10 +41,7 @@ for (const dir of walk('dir1', ignoreHiddenDirs, true)) {
 
 // --- output ---
 {
-  "path": {
-    "rel": "dir1",
-    "abs": "/Users/mhyf/projects/walk-dir-sync/dir1"
-  },
+  "path": "dir1",
   "directories": [
     "dir1-level1-dir1",
     "dir2"
@@ -55,10 +52,7 @@ for (const dir of walk('dir1', ignoreHiddenDirs, true)) {
   ]
 }
 {
-  "path": {
-    "rel": "dir1/dir1-level1-dir1",
-    "abs": "/Users/mhyf/projects/walk-dir-sync/dir1/dir1-level1-dir1"
-  },
+  "path": "dir1/dir1-level1-dir1",
   "directories": [],
   "files": [
     "dir1-level2-file1",
@@ -67,10 +61,7 @@ for (const dir of walk('dir1', ignoreHiddenDirs, true)) {
   ]
 }
 {
-  "path": {
-    "rel": "dir1/dir2",
-    "abs": "/Users/mhyf/projects/walk-dir-sync/dir1/dir2"
-  },
+  "path": "dir1/dir2",
   "directories": [],
   "files": [
     "dir2-level1-file1"
