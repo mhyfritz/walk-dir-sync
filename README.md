@@ -31,7 +31,7 @@ dir2
 ```
 
 ```js
-const walkDirSync = require('walk-dir-sync');
+const walkDirSync = require('walk-dir-sync').default;
 const path = require('path');
 
 function ignoreHiddenDirs(absPath, stats, lstats) {
