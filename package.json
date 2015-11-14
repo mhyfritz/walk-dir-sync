@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Markus Hsi-Yang Fritz",
-  "license": "MIT"
+  "license": "MIT",
+  "repository" : {
+    "type" :"git",
+    "url" : "https://github.com/mhyfritz/walk-dir-sync"
+  }
 }
