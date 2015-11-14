@@ -2,16 +2,14 @@
 
 > Traverse a directory tree synchronously
 
-work in progress
+**Work in progress**
 
-```js
-function* walk(dir, filter=acceptPath, followLinks=false)
-```
+### function* walk(dir, filter=acceptPath, followLinks=false)
 
 ## example
 
 ```bash
-tree dir1 dir2
+$ tree dir1 dir2
 dir1
 ├── dir1-level1-dir1/
 │   ├── dir1-level2-file1
