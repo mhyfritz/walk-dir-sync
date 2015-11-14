@@ -3,11 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 
-function acceptPath(absPath, stats, lstats) {
+function acceptAnyPath(absPath, stats, lstats) {
   return true;
 }
 
-export default function* walk(dir, filter=acceptPath, followLinks=false) {
+export default function* walk(dir, filter=acceptAnyPath, followLinks=false) {
   let ret = {
     path: dir,
     directories: [],

@@ -4,7 +4,7 @@
 
 **Work in progress**
 
-### function* walk(dir, filter=acceptPath, followLinks=false)
+### function* walk(dir, filter=acceptAnyPath, followLinks=false)
 
 ## example
 
