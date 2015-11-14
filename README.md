@@ -9,8 +9,10 @@
 ## example
 
 ```bash
-$ tree dir1 dir2
+$ tree -a dir1 dir2
 dir1
+├── .hidden/
+│   └── hidden-file
 ├── dir1-level1-dir1/
 │   ├── dir1-level2-file1
 │   ├── dir1-level2-file2
