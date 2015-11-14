@@ -3,11 +3,11 @@
 const fs = require('fs');
 const path = require('path');
 
-function accept(absPath, stats, lstats) {
+function acceptPath(absPath, stats, lstats) {
   return true;
 }
 
-function* walk(dir, filter=accept, followLinks=false) {
+export default function* walk(dir, filter=acceptPath, followLinks=false) {
   let ret = {
     path: {
       rel: dir,
@@ -18,6 +18,7 @@ function* walk(dir, filter=accept, followLinks=false) {
   };
 
   let followDirs = [];
+
   for (const file of fs.readdirSync(dir)) {
     const absFilePath = path.resolve(dir, file);
     const fileStats = fs.statSync(absFilePath);
@@ -36,11 +37,10 @@ function* walk(dir, filter=accept, followLinks=false) {
       ret.files.push(file);
     }
   }
+
   yield ret;
 
   for (const followDir of followDirs) {
     yield* walk(followDir, filter, followLinks)
   }
 }
-
-export default walk;
