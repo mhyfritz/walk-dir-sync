@@ -2,17 +2,23 @@
 
 > Traverse a directory tree synchronously. Inspired by Python's `os.walk`
 
-**Work in progress**
+## Docs
 
-### function* walk(dir, { topDown=true, followLinks=false, filter=acceptAnyPath } = {})
+```
+function* walk(dir: string, {
+  topDown?: boolean,
+  followLinks?: boolean,
+  filter?: (absPath: string, stats: fs.Stats, lstats: fs.Stats) => true
+}?)
+```
 
-## install
+## Installation
 
 ```bash
 $ npm install --save walk-dir-sync
 ```
 
-## example
+## Example
 
 ```bash
 $ tree -a dir1 dir2
