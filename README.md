@@ -44,7 +44,7 @@ function ignoreHiddenDirs(absPath, stats, lstats) {
 for (const dir of walkDirSync('dir1', {
   filter: ignoreHiddenDirs,
   followLinks: true,
-  topDown: true
+  topDown: false
 })) {
   console.log(JSON.stringify(dir, null, 2));
 }
@@ -53,17 +53,6 @@ for (const dir of walkDirSync('dir1', {
 outputs
 
 ```js
-{
-  "path": "dir1",
-  "directories": [
-    "dir1-level1-dir1",
-    "dir2"
-  ],
-  "files": [
-    "dir1-level1-file1",
-    "dir1-level1-file2"
-  ]
-}
 {
   "path": "dir1/dir1-level1-dir1",
   "directories": [],
@@ -78,6 +67,17 @@ outputs
   "directories": [],
   "files": [
     "dir2-level1-file1"
+  ]
+}
+{
+  "path": "dir1",
+  "directories": [
+    "dir1-level1-dir1",
+    "dir2"
+  ],
+  "files": [
+    "dir1-level1-file1",
+    "dir1-level1-file2"
   ]
 }
 ```
