@@ -4,7 +4,7 @@
 
 **Work in progress**
 
-### function* walk(dir, filter=acceptAnyPath, followLinks=false)
+### function* walk(dir, { topDown=true, followLinks=false, filter=acceptAnyPath } = {})
 
 ## install
 
