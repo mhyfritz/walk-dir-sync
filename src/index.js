@@ -17,13 +17,13 @@ export default function* walk(dir, {
   for (const file of fs.readdirSync(dir)) {
     const absFilePath = path.resolve(dir, file);
     const fileStats = fs.statSync(absFilePath);
-    const linkStats = fs.lstatSync(absFilePath);
 
-    if (!filter(absFilePath, fileStats, linkStats)) {
+    if (!filter(absFilePath, fileStats)) {
       continue;
     }
 
     if (fileStats.isDirectory()) {
+      const linkStats = fs.lstatSync(absFilePath);
       ret.directories.push(file);
       if (!linkStats.isSymbolicLink() || followLinks) {
         followDirs.push(path.join(dir, file));

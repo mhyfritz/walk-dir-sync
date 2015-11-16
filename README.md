@@ -8,7 +8,7 @@
 function* walk(dir: string, {
   topDown?: boolean,
   followLinks?: boolean,
-  filter?: (absPath: string, stats: fs.Stats, lstats: fs.Stats) => true
+  filter?: (absPath: string, stats: fs.Stats) => true
 }?) => Iterable<{
   path: string,
   directories: string[],
@@ -44,7 +44,7 @@ dir2
 const walkDirSync = require('walk-dir-sync').default;
 const path = require('path');
 
-function ignoreHiddenDirs(absPath, stats, lstats) {
+function ignoreHiddenDirs(absPath, stats) {
   if (stats.isDirectory() && path.basename(absPath).startsWith('.')) {
     return false;
   }

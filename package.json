@@ -1,6 +1,6 @@
 {
   "name": "walk-dir-sync",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "description": "Traverse a directory tree synchronously",
   "main": "lib/index.js",
   "scripts": {
