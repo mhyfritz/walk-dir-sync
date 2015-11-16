@@ -1,14 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-function acceptAnyPath(absPath, stats, lstats) {
-  return true;
-}
-
 export default function* walk(dir, {
   topDown=true,
   followLinks=false,
-  filter=acceptAnyPath,
+  filter=() => true,
 } = {}) {
   let ret = {
     path: dir,
