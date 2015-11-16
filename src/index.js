@@ -8,12 +8,12 @@ function acceptAnyPath(absPath, stats, lstats) {
 export default function* walk(dir, {
   topDown=true,
   followLinks=false,
-  filter=acceptAnyPath
+  filter=acceptAnyPath,
 } = {}) {
   let ret = {
     path: dir,
     directories: [],
-    files: []
+    files: [],
   };
 
   let followDirs = [];
@@ -28,7 +28,7 @@ export default function* walk(dir, {
     }
 
     if (fileStats.isDirectory()) {
-      ret.directories.push(file)
+      ret.directories.push(file);
       if (!linkStats.isSymbolicLink() || followLinks) {
         followDirs.push(path.join(dir, file));
       }
@@ -45,7 +45,7 @@ export default function* walk(dir, {
     yield* walk(followDir, {
       topDown: topDown,
       followLinks: followLinks,
-      filter: filter
+      filter: filter,
     });
   }
 
