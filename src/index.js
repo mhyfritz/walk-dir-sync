@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 
@@ -7,7 +5,11 @@ function acceptAnyPath(absPath, stats, lstats) {
   return true;
 }
 
-export default function* walk(dir, filter=acceptAnyPath, followLinks=false) {
+export default function* walk(dir, {
+  topDown=true,
+  followLinks=false,
+  filter=acceptAnyPath
+} = {}) {
   let ret = {
     path: dir,
     directories: [],
@@ -35,9 +37,19 @@ export default function* walk(dir, filter=acceptAnyPath, followLinks=false) {
     }
   }
 
-  yield ret;
+  if (topDown) {
+    yield ret;
+  }
 
   for (const followDir of followDirs) {
-    yield* walk(followDir, filter, followLinks)
+    yield* walk(followDir, {
+      topDown: topDown,
+      followLinks: followLinks,
+      filter: filter
+    });
+  }
+
+  if (!topDown) {
+    yield ret;
   }
 }
