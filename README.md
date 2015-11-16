@@ -9,7 +9,11 @@ function* walk(dir: string, {
   topDown?: boolean,
   followLinks?: boolean,
   filter?: (absPath: string, stats: fs.Stats, lstats: fs.Stats) => true
-}?)
+}?) => Iterable<{
+  path: string,
+  directories: string[],
+  files: string[]
+}>
 ```
 
 ## Installation
