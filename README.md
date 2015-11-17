@@ -6,9 +6,9 @@
 
 ```
 function* walk(dir: string, {
-  topDown?: boolean,
-  followLinks?: boolean,
-  filter?: (absPath: string, stats: fs.Stats) => true
+  topDown?: boolean # true,
+  followLinks?: boolean # false,
+  filter?: (absPath: string, stats: fs.Stats) => boolean # () => true
 }?) => Iterable<{
   path: string,
   directories: string[],
