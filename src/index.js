@@ -38,11 +38,7 @@ export default function* walk(dir, {
   }
 
   for (const followDir of followDirs) {
-    yield* walk(followDir, {
-      topDown: topDown,
-      followLinks: followLinks,
-      filter: filter,
-    });
+    yield* walk(followDir, { topDown, followLinks, filter });
   }
 
   if (!topDown) {
