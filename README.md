@@ -1,6 +1,6 @@
 # walk-dir-sync
 
-> Traverse a directory tree synchronously. Inspired by Python's `os.walk`
+Traverse a directory tree synchronously. Inspired by Python's `os.walk`.
 
 ## Docs
 
