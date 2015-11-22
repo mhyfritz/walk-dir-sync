@@ -5,7 +5,7 @@ Traverse a directory tree synchronously. Inspired by Python's `os.walk`.
 ## Docs
 
 ```
-function * (dir: string, {
+function* (dir: string, {
   topDown?: boolean # true,
   followLinks?: boolean # false,
   filter?: (absPath: string, stats: fs.Stats) => boolean # () => true
