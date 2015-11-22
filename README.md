@@ -5,7 +5,7 @@
 ## Docs
 
 ```
-function* walk(dir: string, {
+function * (dir: string, {
   topDown?: boolean # true,
   followLinks?: boolean # false,
   filter?: (absPath: string, stats: fs.Stats) => boolean # () => true
